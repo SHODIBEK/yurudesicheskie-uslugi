@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oranienbaum&display=swap" rel="stylesheet">
+    </script>
 </head>
 
 <body data-offset="70" data-target="#navbar-example" data-spy="scroll">
@@ -76,7 +77,63 @@
             </div>
         </div>
     </section>
-    <section class="events" id="m_three">
+    <section class="quiz-form" id="m_three">
+        <div class="wrap">
+            <div class="container">
+                <h2 class="title title__large">
+                    Получить <span style="color: #ffe99c">план вывода</span> компании из кризиса
+                </h2>
+                <div class="quez">
+                    <h2 class="title title__mobile">
+                        Получить <span style="color: #ffe99c">план вывода</span> компании из кризиса
+                    </h2>
+                    <span class="quez__text">Осталось вопросов: <span id="last">5</span> из 5</span>
+                    <div class="progress__bar">
+                        <progress value="0" max="100" id="progress"></progress>
+                    </div>
+                    <div class="quez__items">
+                        <form class="quez__form">
+                            <h2 class="title title__main"></h2>
+                            <div class="quez__item">
+                                <input type="radio" class="quez__radio" id="rad1" name="rad" />
+                                <label class="quez__label" for="rad1">Банковская сфера</label>
+                            </div>
+                            <div class="quez__item">
+                                <input type="radio" class="quez__radio" id="rad2" name="rad" />
+                                <label class="quez__label" for="rad2">Авиация</label>
+                            </div>
+                            <div class="quez__item">
+                                <input type="radio" class="quez__radio" id="rad3" name="rad" />
+                                <label class="quez__label" for="rad3">Военно-промышленный комплекс</label>
+                            </div>
+                            <div class="quez__item">
+                                <input type="radio" class="quez__radio" id="rad4" name="rad" />
+                                <label class="quez__label" for="rad4">Торговля</label>
+                            </div>
+                            <div class="quez__item quez__last">
+                                <input type="radio" class="quez__radio" id="rad5" name="rad" />
+                                <label class="quez__label" for="rad5">Другое</label>
+                            </div>
+                            <div class="btn__group">
+                                <button type="submit" class="btn">Следующий вопрос</button>
+                                <div class="last__ques">Предыдущий вопрос</div>
+                            </div>
+                        </form>
+                        <div class="quez__text quez__phrase">
+                            <p>Каждый бизнес индивидуален и требует персонального подхода.</p>
+                            <p>
+                                Порядок действий разработан юристами, экономистами, арбитражными и управляющими.
+                            </p>
+                            <p>
+                                Ответив на несколько вопросов, вы получите индивидуальный план антикризисных мероприятий.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="events" id="m_four">
         <div class="container">
             <p class="events-warning">Наша задача не допустить крах российской экономики, а для этого необходимо действовать уже сейчас. В следующих разделах описан порядок действий который необходимо предпринять в ближайшее время.</p>
             <div class="events-explanations">
@@ -142,7 +199,7 @@
             </div>
         </div>
     </section>
-    <section class="savings" id="m_four">
+    <section class="savings" id="m_five">
         <div class="savings-top">
             <div class="container">
                 <h4 class="savings-top-title savings-title">Сохранение активов. Сохранение бизнеса
@@ -190,8 +247,240 @@
             </div>
         </div>
     </section>
+    <section class="analys" id="m_six">
+        <div class="container">
+            <h3 class="analys-title title">Компании, успешно использующие <span class="title-yellowed">SWOT-анализ</span></h3>
+        </div>
+        <div class="analys-wrapper">
+            <div class="analys-companies-linewrapper">
+                <div class="container">
+                    <ul class="analys-companies">
+                        <li class="analys-companies-item is-active">
+                            <img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer">
+                            <img src="./img/tab-content-1.png" alt="" class="analys-companies-img analys-companies-img-1">
+                        </li>
+                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-2" src="./img/tab-content-2.png" alt="">
+                        </li>
+                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-3" src="./img/tab-content-3.png" alt="">
+                        </li>
+                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-4" src="./img/tab-content-4.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="analys-contents">
+                <div class="analys-content is-active">
+                    <div class="analys-content-wrapper">
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title">Сильные стороны:</h4>
+                            <p class="analys-content-text">1. Один из крупнейших австрийских банков<br> 2. Присутствие на 17 рынках и более 55 000 сотрудников
+                                <br> 3. Рентабельность активов (ROA) выше, чем в среднем по отрасли и сектору
+                                <br> 4. Рентабельность капитала (ROE) выше, чем в среднем по отрасли и сектору<br> 5. Сильное присутствие в странах Азии<br> 6. Клиентская база насчитывает 14,6 млн клиентов.
+                            </p>
+                        </div>
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title">Слабые стороны:</h4>
+                            <p class="analys-content-text">1. Безнадежные долги и неработающие активы, влияющие на деятельность банка. <br> 2. Высокая зависимость от корпоративного банковского обслуживания.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analys-content-wrapper ">
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Возможности:</h4>
+                            <p class="analys-content-text ">1. Широкие возможности роста в западной части Европы за счет приобретений
+                                <br> 2. Широкие возможности роста в странах с развивающейся экономикой за счет глобальной экспансии
+                                <br> 3. Возможность роста в сфере розничных банковских услуг для конкуренции с другими австрийскими банками
+                                <br> 4. Сделка с Helvetia Holding AG может способствовать росту страхового бизнеса.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Угрозы:</h4>
+                            <p class="analys-content-text ">1. Сокращение инвестиций в Австрии и Центральной и Восточной Европе влияет на деятельность банка. <br> 2. Регуляторные изменения в еврозоне могут повлиять на деятельность банка.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="analys-content">
+                    <div class="analys-content-wrapper">
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title">!Сильные стороны:</h4>
+                            <p class="analys-content-text">1. Один из крупнейших австрийских банков<br> 2. Присутствие на 17 рынках и более 55 000 сотрудников
+                                <br> 3. Рентабельность активов (ROA) выше, чем в среднем по отрасли и сектору
+                                <br> 4. Рентабельность капитала (ROE) выше, чем в среднем по отрасли и сектору<br> 5. Сильное присутствие в странах Азии<br> 6. Клиентская база насчитывает 14,6 млн клиентов.
+                            </p>
+                        </div>
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title">Слабые стороны:</h4>
+                            <p class="analys-content-text">1. Безнадежные долги и неработающие активы, влияющие на деятельность банка.
+                                <br> 2. Высокая зависимость от корпоративного банковского обслуживания.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analys-content-wrapper ">
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Возможности:</h4>
+                            <p class="analys-content-text ">1. Широкие возможности роста в западной части Европы за счет приобретений
+                                <br> 2. Широкие возможности роста в странах с развивающейся экономикой за счет глобальной экспансии
+                                <br> 3. Возможность роста в сфере розничных банковских услуг для конкуренции с другими австрийскими банками
+                                <br> 4. Сделка с Helvetia Holding AG может способствовать росту страхового бизнеса.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Угрозы:</h4>
+                            <p class="analys-content-text ">1. Сокращение инвестиций в Австрии и Центральной и Восточной Европе влияет на деятельность банка. <br> 2. Регуляторные изменения в еврозоне могут повлиять на деятельность банка.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="analys-content">
+                    <div class=" analys-content-wrapper">
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title">!!Сильные стороны:</h4>
+                            <p class="analys-content-text ">1. Один из крупнейших австрийских банков<br> 2. Присутствие на 17 рынках и более 55 000 сотрудников
+                                <br> 3. Рентабельность активов (ROA) выше, чем в среднем по отрасли и сектору
+                                <br> 4. Рентабельность капитала (ROE) выше, чем в среднем по отрасли и сектору<br> 5. Сильное присутствие в странах Азии<br> 6. Клиентская база насчитывает 14,6 млн клиентов.
+                            </p>
+                        </div>
+                        <div class="analys-content-item">
+                            <h4 class="analys-content-title ">Слабые стороны:</h4>
+                            <p class="analys-content-text ">1. Безнадежные долги и неработающие активы, влияющие на деятельность банка.
+                                <br> 2. Высокая зависимость от корпоративного банковского обслуживания.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analys-content-wrapper ">
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Возможности:</h4>
+                            <p class="analys-content-text ">1. Широкие возможности роста в западной части Европы за счет приобретений
+                                <br> 2. Широкие возможности роста в странах с развивающейся экономикой за счет глобальной экспансии
+                                <br> 3. Возможность роста в сфере розничных банковских услуг для конкуренции с другими австрийскими банками
+                                <br> 4. Сделка с Helvetia Holding AG может способствовать росту страхового бизнеса.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Угрозы:</h4>
+                            <p class="analys-content-text ">1. Сокращение инвестиций в Австрии и Центральной и Восточной Европе влияет на деятельность банка. <br> 2. Регуляторные изменения в еврозоне могут повлиять на деятельность банка.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="analys-content ">
+                    <div class="analys-content-wrapper">
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">!!!Сильные стороны:</h4>
+                            <p class="analys-content-text ">1. Один из крупнейших австрийских банков<br> 2. Присутствие на 17 рынках и более 55 000 сотрудников
+                                <br> 3. Рентабельность активов (ROA) выше, чем в среднем по отрасли и сектору
+                                <br> 4. Рентабельность капитала (ROE) выше, чем в среднем по отрасли и сектору<br> 5. Сильное присутствие в странах Азии<br> 6. Клиентская база насчитывает 14,6 млн клиентов.
+                            </p>
+                        </div>
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Слабые стороны:</h4>
+                            <p class="analys-content-text ">1. Безнадежные долги и неработающие активы, влияющие на деятельность банка.
+                                <br> 2. Высокая зависимость от корпоративного банковского обслуживания.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="analys-content-wrapper ">
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Возможности:</h4>
+                            <p class="analys-content-text ">1. Широкие возможности роста в западной части Европы за счет приобретений
+                                <br> 2. Широкие возможности роста в странах с развивающейся экономикой за счет глобальной экспансии
+                                <br> 3. Возможность роста в сфере розничных банковских услуг для конкуренции с другими австрийскими банками
+                                <br> 4. Сделка с Helvetia Holding AG может способствовать росту страхового бизнеса.
+                                <br>
+                            </p>
+                        </div>
+                        <div class="analys-content-item ">
+                            <h4 class="analys-content-title ">Угрозы:</h4>
+                            <p class="analys-content-text ">1. Сокращение инвестиций в Австрии и Центральной и Восточной Европе влияет на деятельность банка. <br> 2. Регуляторные изменения в еврозоне могут повлиять на деятельность банка.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="brief-aid" id="m_seven">
+        <section class="brief ">
+            <div class="container ">
+                <h3 class="brief-title title ">Краткое <span class="title-yellowed ">руководство</span> к действию</h3>
+                <div class="brief-wrapper ">
+                    <div class="brief-card ">
+                        <div class="brief-number ">01</div>
+                        <div class="brief-search ">
+                            <img src="./img/brief-icon-search.png " alt=" ">
+                        </div>
+                        <p class="brief-text ">
+                            <img src="./img/dark-circles.svg " alt=" "> Проанализируйте деятельность предприятия использую методику SWOT
+                        </p>
+                    </div>
+                    <div class="brief-card ">
+                        <div class="brief-number ">02</div>
+                        <div class="brief-search ">
+                            <img src="./img/brief-icon-plan.png " alt=" ">
+                        </div>
+                        <p class="brief-text "><img src="./img/dark-circles.svg " alt=" ">Подготовьте план антикризисных мероприятий.
+                        </p>
+                    </div>
+                    <div class="brief-card ">
+                        <div class="brief-number ">03</div>
+                        <div class="brief-search ">
+                            <img src="./img/brief-icon-variants.png " alt=" ">
+                        </div>
+                        <p class="brief-text "><img src="./img/dark-circles.svg " alt=" ">Просчитайте все возможные варианты развития ситуация как позитивные, так<br> и негативные
+                        </p>
+                    </div>
+                </div>
+                <div class="brief-wrapper ">
+                    <div class="brief-card ">
+                        <div class="brief-number ">04</div>
+                        <div class="brief-search ">
+                            <img src="./img/brief-icon-protect.png " alt=" ">
+                        </div>
+                        <p class="brief-text "><img src="./img/dark-circles.svg " alt=" ">Создайте остров безопасности, который <br> позволит сохранить активы, при негативном развитии событий.</p>
+                    </div>
+                    <div class="brief-card ">
+                        <div class="brief-number ">05</div>
+                        <div class="brief-search ">
+                            <img src="./img/brief-icon-order.png " alt=" ">
+                        </div>
+                        <p class="brief-text "><img src="./img/dark-circles.svg " alt=" ">Приведите в порядок бухгалтерскую отчетность на случай банкротства.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="aid">
+            <div class="container">
+                <h3 class="aid-title title">Поможем найти выход из кризиса</h3>
+                <div class="aid-item">
+                    <h5 class="aid-item-title">Ответьте на несколько вопросов и получите <span>план вывода
+                            компании из кризиса</span></h5>
+                    <p class="aid-item-text">Предварительная разработка вариантов выхода из той или иной кризисной ситуации очень важна, так как она позволяет иметь определенный план действий на случай возникновения неблагоприятной ситуации.
+                    </p>
+                    <button class="aid-button">
+                        <span>Пройти тест</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer " id="m_eight">
+        <div class="container ">
+            <div class="footer-wrapper ">
+                <div class="footer-company ">© Антисанкции 2022</div>
+                <div class="footer-email ">Bankrotunet@mail.ru</div>
+                <div class="footer-phone ">8 921 328 65 67</div>
+            </div>
+        </div>
+    </footer>
 </body>
-<script src="./js/bootstrap.bundle.min.js"></script>
-<script src="./js/script.js"></script>
+<script src="./js/bootstrap.bundle.min.js "></script>
+<script src="./js/script.js "></script>
+
+</html>
 
 </html>
