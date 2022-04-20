@@ -19,6 +19,10 @@ p {
     margin-top: 0;
 }
 
+.owl-dots {
+    display: none;
+}
+
 .m_scrollspy {
     position: fixed;
     top: 50%;
@@ -295,15 +299,14 @@ progress::-webkit-progress-value {
 }
 
 .quez {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     position: relative;
     z-index: 1000;
     background: rgba(37, 36, 41, 0.75);
     backdrop-filter: blur(3px);
     border-radius: 10px;
     padding: 20px 30px;
+    margin: 0 auto;
 }
 
 .quez__text {
@@ -505,7 +508,7 @@ input[type="text"]:not(.input-radio) {
     content: "";
     width: 317px;
     height: 20px;
-    transform: translateX(4px);
+    transform: translateX(-150px);
     position: absolute;
     bottom: -7px;
     z-index: -100;
@@ -546,6 +549,17 @@ input[type="text"]:not(.input-radio) {
     font-size: 15px;
     font-weight: 400;
     font-family: "Inter", sans-serif;
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+.last__ques::after {
+    content: '';
+    width: 100%;
+    display: block;
+    background: #fff;
+    opacity: 0.5;
+    height: 2px;
 }
 
 .last__ques:hover {
@@ -598,7 +612,7 @@ input[type="text"]:not(.input-radio) {
         width: 100%;
     }
     .last__ques {
-        margin: 40px 0;
+        margin: 40px auto;
     }
     .quez__item {
         width: 90%;
@@ -655,18 +669,6 @@ input[type="text"]:not(.input-radio) {
     }
 }
 
-@media screen and (max-width: 608px) {
-    .quez {
-        width: 78vmax;
-    }
-}
-
-@media screen and (max-width: 570px) {
-    .quez {
-        width: 68vmax;
-    }
-}
-
 @media screen and (max-width: 475px) {
     .quez__phrase {
         display: none;
@@ -693,9 +695,6 @@ input[type="text"]:not(.input-radio) {
         font-size: 30px;
         margin-bottom: 10px;
     }
-    .quez {
-        width: 58vmax;
-    }
 }
 
 @media screen and (max-width: 412px) {
@@ -718,9 +717,6 @@ input[type="text"]:not(.input-radio) {
     }
     .quez {
         width: 95%;
-    }
-    .quez__item {
-        width: 100%;
     }
 }
 
@@ -1193,7 +1189,7 @@ input[type="text"]:not(.input-radio) {
 
 .brief-search {
     position: absolute;
-    top: -62px;
+    top: -83px;
     right: 15px;
 }
 
@@ -1201,9 +1197,10 @@ input[type="text"]:not(.input-radio) {
     font-size: 19px;
     line-height: 170%;
     color: #212026;
-    padding-top: 57px;
+    padding-top: 50px;
     padding-left: 39px;
     padding-right: 10px;
+    padding-bottom: 36px;
     max-width: 360px;
     margin: auto;
 }
@@ -1644,6 +1641,7 @@ input[type="text"]:not(.input-radio) {
         margin-bottom: 20px;
         margin-right: 0;
         margin-left: 0;
+        height: 169px;
     }
     .container {
         gap: 0;
@@ -1684,6 +1682,7 @@ input[type="text"]:not(.input-radio) {
     }
     .analys-content.is-active {
         padding: 20px 10px 20px 15px;
+        margin-top: -40px;
     }
     .analys-content-text {
         font-size: 14px;
@@ -1780,6 +1779,11 @@ input[type="text"]:not(.input-radio) {
         height: 78.88px;
         bottom: 40px;
     }
+    .brief-text {
+        max-width: 320px;
+        padding-left: 20px;
+        padding-top: 45px;
+    }
 }
 
 @media(max-width: 423px) {
@@ -1852,6 +1856,53 @@ input[type="text"]:not(.input-radio) {
     .savings-list-item {
         font-size: 14px;
         line-height: 29px;
+    }
+    .title__main {
+        font-size: 20px;
+        line-height: 114.9%;
+    }
+    .title__large {
+        font-size: 30px;
+        line-height: 114.9%;
+    }
+    .quez {
+        padding: 20px 19px 19px 15px;
+        max-width: 340px;
+        width: 100%;
+    }
+    .btn {
+        font-size: 15.0184px;
+        line-height: 173.4%;
+        width: 306px;
+    }
+    progress {
+        margin-top: 20px;
+    }
+    .progress__bar {
+        margin-bottom: 20px;
+        height: auto;
+    }
+    .quiz-form .container,
+    .btn__group {
+        display: block;
+    }
+    .last__ques {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .brief-card.brief-card-2 {
+        height: 146px !important;
+    }
+    .brief-card.brief-card-1 {
+        height: 176px !important;
+    }
+    .brief-card.brief-card-3,
+    .brief-card.brief-card-5 {
+        height: 169px !important;
+    }
+    .brief-card.brief-card-4 .brief-text {
+        max-width: 320px;
+        padding-top: 35px;
     }
 }
 
