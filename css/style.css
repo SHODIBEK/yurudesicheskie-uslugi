@@ -508,7 +508,7 @@ input[type="text"]:not(.input-radio) {
     content: "";
     width: 317px;
     height: 20px;
-    transform: translateX(-150px);
+    transform: translateX(-155px);
     position: absolute;
     bottom: -7px;
     z-index: -100;
@@ -708,9 +708,6 @@ input[type="text"]:not(.input-radio) {
     }
     .btn {
         width: 250px;
-    }
-    .btn__block::after {
-        width: 97%;
     }
     .quez__form {
         width: 100%;
@@ -1903,6 +1900,11 @@ input[type="text"]:not(.input-radio) {
     .brief-card.brief-card-4 .brief-text {
         max-width: 320px;
         padding-top: 35px;
+    }
+    .btn__block::after {
+        width: 300px;
+        transform: translateX(-150px);
+        bottom: -5px;
     }
 }
 
