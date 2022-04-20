@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Антисанкционная кампания 2022</title>
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,10 +34,10 @@
             <p class="header-description">Санкции против России — политические и экономические меры, которые включают в себя масштабные ограничения финансовой системы России, деятельности ряда российских компаний и отдельных отраслей экономики, а также закрытие воздушного пространства
                 и морских портов, персональные санкции.</p>
             <div class="header-btn">
-                <button class="header-button">
+                <a href="#m_three" class="header-button">
                     <span class="header-btn-text">Получить план по выводу<br> компании из кризисной ситуации</span>
                     <img class="header-btn-img" src="./img/header-folder.png" alt="">
-                </button>
+                </a>
             </div>
         </div>
     </header>
@@ -84,48 +85,49 @@
                     Получить <span style="color: #ffe99c">план вывода</span> компании из кризиса
                 </h2>
                 <div class="quez">
-                    <h2 class="title title__mobile">
-                        Получить <span style="color: #ffe99c">план вывода</span> компании из кризиса
-                    </h2>
                     <span class="quez__text">Осталось вопросов: <span id="last">5</span> из 5</span>
                     <div class="progress__bar">
                         <progress value="0" max="100" id="progress"></progress>
                     </div>
-                    <div class="quez__items">
-                        <form class="quez__form">
-                            <h2 class="title title__main"></h2>
-                            <div class="quez__item">
-                                <input type="radio" class="quez__radio" id="rad1" name="rad" />
-                                <label class="quez__label" for="rad1">Банковская сфера</label>
+                    <h2 class="title title__main"></h2>
+                    <div class="top">
+                        <div class="quez__items">
+                            <div class="quez__form" id="quez__form">
+                                <label class="quez__item" for="rad1">
+                                    <input type="radio" class="quez__radio" id="rad1" name="rad" />
+                                    <span class="quez__label">Банковская сфера</span>
+                                </label>
+                                <label class="quez__item" for="rad2">
+                                    <input type="radio" class="quez__radio" id="rad2" name="rad" />
+                                    <span class="quez__label">Авиация</span>
+                                </label>
+                                <label class="quez__item" for="rad3">
+                                    <input type="radio" class="quez__radio" id="rad3" name="rad" />
+                                    <span class="quez__label">Военно-промышленный комплекс</span>
+                                </label>
+                                <label class="quez__item" for="rad4">
+                                    <input type="radio" class="quez__radio" id="rad4" name="rad" />
+                                    <span class="quez__label">Торговля</span>
+                                </label>
+                                <label class="quez__item quez__last" for="rad5">
+                                    <input type="radio" class="quez__radio" id="rad5" name="rad" />
+                                    <span class="quez__label">Другое</span>
+                                </label>
+                                <div class="btn__group">
+                                    <div class="btn__block">
+                                        <button type="submit" class="btn">Следующий вопрос</button>
+                                    </div>
+                                    <div class="last__ques">Предыдущий вопрос</div>
+                                </div>
                             </div>
-                            <div class="quez__item">
-                                <input type="radio" class="quez__radio" id="rad2" name="rad" />
-                                <label class="quez__label" for="rad2">Авиация</label>
-                            </div>
-                            <div class="quez__item">
-                                <input type="radio" class="quez__radio" id="rad3" name="rad" />
-                                <label class="quez__label" for="rad3">Военно-промышленный комплекс</label>
-                            </div>
-                            <div class="quez__item">
-                                <input type="radio" class="quez__radio" id="rad4" name="rad" />
-                                <label class="quez__label" for="rad4">Торговля</label>
-                            </div>
-                            <div class="quez__item quez__last">
-                                <input type="radio" class="quez__radio" id="rad5" name="rad" />
-                                <label class="quez__label" for="rad5">Другое</label>
-                            </div>
-                            <div class="btn__group">
-                                <button type="submit" class="btn">Следующий вопрос</button>
-                                <div class="last__ques">Предыдущий вопрос</div>
-                            </div>
-                        </form>
+                        </div>
                         <div class="quez__text quez__phrase">
                             <p>Каждый бизнес индивидуален и требует персонального подхода.</p>
                             <p>
                                 Порядок действий разработан юристами, экономистами, арбитражными и управляющими.
                             </p>
                             <p>
-                                Ответив на несколько вопросов, вы получите индивидуальный план антикризисных мероприятий.
+                                Ответив на несколько вопросов, вы получите индивидуальный план антикризисных <br /> мероприятий.
                             </p>
                         </div>
                     </div>
@@ -225,11 +227,11 @@
             </div>
         </div>
         <div class="savings-bottom">
-            <div class="container">
-                <div class="savings-bottom-wrapper">
-                    <div class="savings-bottom-img">
-                        <img src="./img/savings-bottom.png" alt="">
-                    </div>
+            <div class="savings-bottom-wrapper">
+                <div class="savings-bottom-img">
+                    <img src="./img/savings-bottom.png" alt="">
+                </div>
+                <div class="container">
                     <div class="savings-content">
                         <h4 class="savings-bottom-title savings-title">Ликвидация. Банкротство</h4>
                         <div class="savings-bottom-info">Перед введением процедуры банкротства или ликвидации необходимо устранить:
@@ -248,26 +250,21 @@
         </div>
     </section>
     <section class="analys" id="m_six">
+        <h3 class="analys-title title">Компании, успешно использующие <span class="title-yellowed">SWOT-анализ</span>
+        </h3>
+        <ul class="analys-companies owl-carousel">
+            <li class="analys-companies-item ">
+                <img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer">
+                <img src="./img/tab-content-1.png" alt="" class="analys-companies-img analys-companies-img-1">
+            </li>
+            <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-2" src="./img/tab-content-2.png" alt="">
+            </li>
+            <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-3" src="./img/tab-content-3.png" alt="">
+            </li>
+            <li class="analys-companies-item is-active"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-4" src="./img/tab-content-4.png" alt="">
+            </li>
+        </ul>
         <div class="container">
-            <h3 class="analys-title title">Компании, успешно использующие <span class="title-yellowed">SWOT-анализ</span></h3>
-        </div>
-        <div class="analys-wrapper">
-            <div class="analys-companies-linewrapper">
-                <div class="container">
-                    <ul class="analys-companies">
-                        <li class="analys-companies-item is-active">
-                            <img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer">
-                            <img src="./img/tab-content-1.png" alt="" class="analys-companies-img analys-companies-img-1">
-                        </li>
-                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-2" src="./img/tab-content-2.png" alt="">
-                        </li>
-                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-3" src="./img/tab-content-3.png" alt="">
-                        </li>
-                        <li class="analys-companies-item"><img src="./img/tabs-content-layer.png" alt="" class="analys-companies-layer"><img class="analys-companies-img analys-companies-img-4" src="./img/tab-content-4.png" alt="">
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div class="analys-contents">
                 <div class="analys-content is-active">
                     <div class="analys-content-wrapper">
@@ -461,9 +458,9 @@
                             компании из кризиса</span></h5>
                     <p class="aid-item-text">Предварительная разработка вариантов выхода из той или иной кризисной ситуации очень важна, так как она позволяет иметь определенный план действий на случай возникновения неблагоприятной ситуации.
                     </p>
-                    <button class="aid-button">
+                    <a href="#m_three" class="aid-button">
                         <span>Пройти тест</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -478,7 +475,10 @@
         </div>
     </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./js/owl.carousel.min.js"></script>
 <script src="./js/bootstrap.bundle.min.js "></script>
+<script src="./js/carousel.js "></script>
 <script src="./js/script.js "></script>
 
 </html>

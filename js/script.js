@@ -76,27 +76,47 @@ const questions = [{
 ];
 
 let count = 0;
-const __labels = Array.from(document.querySelectorAll(".quez__item label"));
+const __labels = Array.from(document.querySelectorAll("label span"));
 const __lastBtn = document.querySelector(".last__ques");
 
+const myInput = document.createElement("input");
+myInput.type = "text";
+myInput.backgroundColor = "red";
+myInput.style.display = "none";
+myInput.classList.add("input-radio");
+
 const createElements = (elem) => {
-    const __labels = Array.from(document.querySelectorAll(".quez__item label"));
-    document.querySelector(".quez__items .title").textContent = `${count + 1}. ${
+    document.querySelector(".title__main").textContent = `${count + 1}. ${
     elem[count].question
   }`;
     for (let i = 0; i < __labels.length; i++) {
         __labels[i].textContent = elem[count].choices[i];
+
         if (__labels[i].textContent === "") __labels[i].parentElement.remove();
     }
     if (count > 0) {
         __lastBtn.style.display = "block";
     }
+    const elems = Array.from(document.querySelectorAll(".quez__item"));
+    elems.forEach((e) => {
+        e.textContent.includes("Другое") && e.classList.add("quez__last"),
+            e.addEventListener("click", onOther),
+            e.append(myInput);
+        if (!e.textContent.includes("Другое")) {
+            e.classList.remove("quez__last");
+        }
+        e.textContent.includes("Европа") && e.classList.add("not-width");
+    });
 };
 
 createElements(questions);
 
 let k = 5;
 const onPrev = () => {
+    const radios = document.querySelectorAll(".quez__radio");
+    radios.forEach((e) => {
+        console.log(e);
+    });
     count--;
     i++;
     if (i >= 4) {
@@ -125,11 +145,19 @@ const onModal = (e) => {
     h.classList.add("title");
     h.classList.add("thanks");
     document.querySelector(".quez").append(h);
+    const btnBlock = document.createElement("div");
+    btnBlock.classList.add("btn__block");
     const btnEl = document.createElement("button");
     btnEl.type = "button";
+    btnEl.classList.add("btn");
     btnEl.classList.add("btn__again");
     btnEl.textContent = "Пройти заново";
-    document.querySelector(".quez").append(btnEl);
+    btnEl.classList.add("btn__after");
+    btnBlock.append(btnEl);
+    document.querySelector(".quez").style.gap = "60px";
+    document.querySelector(".quez").style.justifyContent = "center";
+    document.querySelector(".quez").style.alignItems = "center";
+    document.querySelector(".quez").append(btnBlock);
     document.querySelector(".btn__again").onclick = () => {
         window.location.reload();
     };
@@ -150,21 +178,37 @@ const contacts = () => {
         inp.placeholder = list[i];
         document.querySelector(".quez__form").appendChild(inp);
     }
+
+    const elDiv = document.createElement("p");
+    elDiv.classList.add("text__light");
+    elDiv.textContent = "*Поля со звездочкой обыязятельны для заполнения";
+    document.querySelector(".quez__form").appendChild(elDiv);
     __btn.remove();
+    const btnBlock = document.createElement("div");
+    btnBlock.classList.add("btn__block");
+    btnBlock.style.marginRight = "35px";
     const butEl = document.createElement("button");
     butEl.type = "submit";
     butEl.textContent = "Отправить";
-    butEl.classList.add("btn__sub");
+    butEl.classList.toggle("btn");
+    butEl.classList.toggle("btn__sub");
     butEl.style.order = 1;
-
+    btnBlock.append(butEl);
     butEl.addEventListener("click", onModal);
     __lastBtn.style.order = 2;
-    document.querySelector(".btn__group").append(butEl);
+    document.querySelector(".btn__group").style.marginTop = "-10px";
+    document.querySelector(".btn__group").style.gap = "0px";
+    document.querySelector(".btn__group").append(btnBlock);
     document.querySelector(".btn__group").style.order = 2;
 };
 
 const onNext = (e) => {
     e.preventDefault();
+    const radios = document.querySelectorAll(".quez__radio");
+    radios.forEach((e) => {
+        e.checked = false;
+        console.log(e.checked);
+    });
     i -= 1;
     count++;
     last.textContent = i;
@@ -176,4 +220,55 @@ const onNext = (e) => {
     }
     createElements(questions);
 };
+
 __btn.addEventListener("click", onNext);
+
+function onOther() {
+    const otherElems = Array.from(document.querySelectorAll(".quez__item"));
+    otherElems.forEach((e) => {
+        e.style.backgroundColor = "#1A191F";
+        e.style.color = "#fff";
+    });
+    try {
+        if (document.querySelector(".quez__last .quez__radio").checked) {
+            document.querySelector(".quez__last").style.backgroundColor = "#FFE99C";
+            document.querySelector(".quez__last span").style.display = "none";
+            document.querySelector(".input-radio").style.display = "block";
+        } else {
+            document.querySelector(".quez__last span").style.display = "inline";
+            document.querySelector(".input-radio").style.display = "none";
+        }
+    } catch {
+        return;
+    }
+}
+
+document.querySelector(".quez__last").addEventListener("change", onOther);
+
+const __radios = Array.from(document.querySelectorAll(".quez__radio"));
+const onToggle = ({ target }) => {
+    if (target.parentElement.getAttribute("for") === "rad5") {
+        target.parentElement.addEventListener("click", onOther);
+    }
+    for (let i = 0; i < __radios.length; i++) {
+        if (__radios[i].checked) {
+            __radios[i].parentElement.style.backgroundColor = "#ffe99c";
+            __radios[i].parentElement.style.color = "#111";
+        } else {
+            __radios[i].parentElement.style.color = "#fff";
+            __radios[i].parentElement.style.backgroundColor = "#1A191F";
+        }
+    }
+    try {
+        document.querySelector(".quez__last span").style.display = "inline";
+        document.querySelector(".quez__last .input-radio").style.display = "none";
+    } catch {
+        return;
+    }
+};
+const __items = Array.from(document.querySelectorAll(".quez__item"));
+__items.forEach((el) => {
+    el.addEventListener("change", onToggle);
+    el.textContent.includes("Другое") &&
+        el.removeEventListener("change", onToggle);
+});
