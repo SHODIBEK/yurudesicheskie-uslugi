@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let formData = $('#quez__form').serializeArray();
     if (validate()) {
-      await fetch('../sendmail.php', {
+      await fetch('sendmail.php', {
         method: 'post',
         headers: {
           'Accept': 'application/json',
