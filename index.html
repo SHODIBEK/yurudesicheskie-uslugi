@@ -15,7 +15,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oranienbaum&display=swap"
 		rel="stylesheet">
-	</script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body data-offset="70" data-target="#navbar-example" data-spy="scroll">
@@ -97,7 +97,7 @@
 								<div class="proggress_barLine" id="progress"></div>
 							</div>
 							<div class="row justify-content-between">
-								<form class="quez__items col-12 col-lg-8" id="quez__form">
+								<form class="quez__items col-12 col-lg-8" id="quez__form" method="POST">
 									<div class="quez__form" id="quiz">
 										<div class="quez__list quez__list--active row">
 											<h2 class="title quez__title" id="title">Сфера деятельности вашей компании</h2>
@@ -120,7 +120,7 @@
 											<div class="quiz__group col-md-12">
 												<input class="quez__radio" type="radio" name="sfera" id="rad-4" data-tab="other">
 												<label class="quez__item" for="rad-4">Другое</label>
-												<input class="quez__input quez__other" type="text" name="sfera" placeholder="Напишите свой вариант" style="display: none;">
+												<input class="quez__input quez__other" type="text"  disabled name="sfera" placeholder="Напишите свой вариант" style="display: none;">
 											</div>
 										</div>
 										<div class="quez__list row">
@@ -144,7 +144,7 @@
 											<div class="quiz__group col-md-12">
 												<input class="quez__radio" type="radio" name="sanksy" id="rad-9" data-tab="other">
 												<label class="quez__item" for="rad-9">Другое</label>
-												<input class="quez__input quez__other" type="text" name="sanksy" placeholder="Напишите свой вариант" style="display: none;">
+												<input class="quez__input quez__other" type="text"  disabled name="sanksy" placeholder="Напишите свой вариант" style="display: none;">
 											</div>
 										</div>
 										<div class="quez__list row">
@@ -160,7 +160,7 @@
 											<div class="quiz__group col-md-12">
 												<input class="quez__radio" type="radio" name="gosuchast" id="rad-12" data-tab="other">
 												<label class="quez__item" for="rad-12">Другое</label>
-												<input class="quez__input quez__other" type="text" name="gosuchast" placeholder="Напишите свой вариант" style="display: none;">
+												<input class="quez__input quez__other" type="text"  disabled name="gosuchast" placeholder="Напишите свой вариант" style="display: none;">
 											</div>
 										</div>
 										<div class="quez__list row">
@@ -184,7 +184,7 @@
 											<div class="quiz__group col-md-12">
 												<input class="quez__radio" type="radio" name="sanksykomp" id="rad-17" data-tab="other">
 												<label class="quez__item" for="rad-17">Другие страны</label>
-												<input class="quez__input quez__other" type="text" name="sanksykomp" placeholder="Напишите свой вариант" style="display: none;">
+												<input class="quez__input quez__other" type="text"  disabled name="sanksykomp" placeholder="Напишите свой вариант" style="display: none;">
 											</div>
 										</div>
 										<div class="quez__list row">
@@ -212,6 +212,10 @@
 											</div>
 											<div class="quiz__group col-12">
 												<input class="quez__input" type="email" name="email" placeholder="Ваш E-mail*" required><span class="quez__attention" id="attention">*Поля со звездочкой обыязятельны для заполнения</span>
+											</div>
+											<div class="quez__recaptcha col-12 d-flex flex-wrap">
+												<div class="g-recaptcha col-12 col-xl-6 justify-content-md-start justify-content-center d-flex" data-sitekey="6LcmO50fAAAAAJDIC2rBtZBZPZdKmIkU_ahvPgrn"></div>
+												<div class="text-danger col-12 col-xl-6" id="recaptchaError"></div>
 											</div>
 										</div>
 									</div>

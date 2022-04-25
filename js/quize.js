@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Variables
+  const quiz = document.querySelector('.quez');
   const nextButton = document.getElementById('next');
   const prevButton = document.getElementById('previous');
   const submitButton = document.querySelector('.quez button[type=submit]');
@@ -10,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const allQuestion = document.getElementById('all');
   const currentQuestion = document.getElementById('current');
   const otherInput = document.querySelectorAll('[data-tab]');
-  const quizInputs = document.querySelectorAll('.quez input[type="radio"]:checked');
   const emailInput = document.querySelector('.quez input[type="email"]');
   const attentionText = document.getElementById('attention');
   const quezForm = document.querySelector('#quez__form');
   const quizWrapper = document.getElementById('quez-wrapper');
   const quizSuccess = document.getElementById('success');
   const restartBtn = document.getElementById('reset');
+  const recaptchaEror = document.querySelector('#recaptchaError');
 
   let currentSlide = 0;
 
@@ -60,7 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentTarget = e.target;
     const getOtherInput = currentTarget.parentElement.querySelector('.quez__other');
     document.getElementById('quiz').addEventListener('change', () => {
-      currentTarget.checked ? getOtherInput.style.display = "block" : getOtherInput.style.display = "none";
+      if (currentTarget.checked) {
+        getOtherInput.removeAttribute('disabled');
+        getOtherInput.style.display = "block";
+      } else {
+        getOtherInput.setAttribute("disabled", "disabled");
+        getOtherInput.style.display = "none"
+      }
       getOtherInput.focus();
     })
   }
@@ -127,26 +134,30 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   //SUBMIT FORMS
-  const submitForm = async (e) => {
-
-    let formData = $('#quez__form').serializeArray();
-    if (validate()) {
+  quezForm.onsubmit = async (e) => {
+    e.preventDefault();
+    let captcha = grecaptcha.getResponse();
+    if (!captcha.length) {
+      recaptchaEror.innerHTML = '* Вы не прошли проверку "Я не робот"';
+    } else if (validate()) {
+      let formData = new FormData(quezForm);
+      formData.append('g-recaptcha-response', captcha);
+      quiz.classList.add('_sending');
       await fetch('sendmail.php', {
-        method: 'post',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData),
+        method: 'POST',
+        body: formData
       }).then((res) => {
-        if (res.status === 201) {
+        if (res.status === 200) {
           showSuccess();
+          recaptchaEror.innerHTML = '';
+          quiz.classList.remove('_sending');
+          grecaptcha.reset();
         }
       }).catch((error) => {
         console.log(error)
-      })
+      });
     }
-  }
+  };
 
   // INIT
   quizStepInfo();
@@ -159,10 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
   prevButton.addEventListener("click", showPreviousSlide);
   nextButton.addEventListener("click", showNextSlide);
   restartBtn.addEventListener("click", restartQuiz);
-  submitButton.addEventListener("click", function(e) {
-    e.preventDefault();
-    submitForm()
-  });
   otherInput.forEach(tab => {
     tab.addEventListener('click', showOtherVariant);
   })
